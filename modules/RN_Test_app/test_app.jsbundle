@@ -1633,7 +1633,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   var _app = _$$_REQUIRE(_dependencyMap[2], "./app.json");
 
-  _reactNative.AppRegistry.registerComponent(_app.name, function () {
+  _reactNative.AppRegistry.registerComponent('App', function () {
     return _App.default;
   });
 },0,[1,349,350],"index.js");
@@ -71374,13 +71374,13 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
             fileName: _jsxFileName,
             lineNumber: 25
           }
-        }, "To get started, edit App.js"), _react.default.createElement(_reactNative.Text, {
+        }, "This is A Test App"), _react.default.createElement(_reactNative.Text, {
           style: styles.instructions,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 26
           }
-        }, instructions));
+        }, "This is A Test App"));
       }
     }]);
     babelHelpers.inherits(App, _Component);

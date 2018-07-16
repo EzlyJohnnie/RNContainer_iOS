@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7067F133C2AE413DC82D80CD /* libPods-RNContainer_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A61F7602E32BC0847DC721 /* libPods-RNContainer_iOS.a */; };
+		932AC71020FCAF460076254C /* another_test_app.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 932AC70F20FCAF460076254C /* another_test_app.jsbundle */; };
+		932AC72B20FCB3EC0076254C /* test_app.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 932AC72A20FCB3EC0076254C /* test_app.jsbundle */; };
 		9392441B20FC8D3700D7A184 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9392441A20FC8D3700D7A184 /* AppDelegate.m */; };
 		9392441E20FC8D3700D7A184 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9392441D20FC8D3700D7A184 /* ViewController.m */; };
 		9392442120FC8D3700D7A184 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9392441F20FC8D3700D7A184 /* Main.storyboard */; };
@@ -17,8 +19,6 @@
 		9392442C20FC8D3800D7A184 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9392442B20FC8D3800D7A184 /* main.m */; };
 		9392443620FC8D3800D7A184 /* RNContainer_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9392443520FC8D3800D7A184 /* RNContainer_iOSTests.m */; };
 		9392444120FC8D3800D7A184 /* RNContainer_iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9392444020FC8D3800D7A184 /* RNContainer_iOSUITests.m */; };
-		9392445820FC9E8700D7A184 /* index.ios.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 9392445720FC9E8700D7A184 /* index.ios.jsbundle */; };
-		9392445A20FCA1AC00D7A184 /* index.ios.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 9392445920FCA1AC00D7A184 /* index.ios.jsbundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +41,8 @@
 /* Begin PBXFileReference section */
 		30BC012F9E062354B044EC8A /* Pods-RNContainer_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNContainer_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNContainer_iOS/Pods-RNContainer_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		92A61F7602E32BC0847DC721 /* libPods-RNContainer_iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNContainer_iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		932AC70F20FCAF460076254C /* another_test_app.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = another_test_app.jsbundle; sourceTree = "<group>"; };
+		932AC72A20FCB3EC0076254C /* test_app.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_app.jsbundle; sourceTree = "<group>"; };
 		9392441620FC8D3700D7A184 /* RNContainer_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNContainer_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9392441920FC8D3700D7A184 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9392441A20FC8D3700D7A184 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -58,8 +60,6 @@
 		9392443C20FC8D3800D7A184 /* RNContainer_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RNContainer_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9392444020FC8D3800D7A184 /* RNContainer_iOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNContainer_iOSUITests.m; sourceTree = "<group>"; };
 		9392444220FC8D3800D7A184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9392445720FC9E8700D7A184 /* index.ios.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.ios.jsbundle; sourceTree = "<group>"; };
-		9392445920FCA1AC00D7A184 /* index.ios.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.ios.jsbundle; sourceTree = "<group>"; };
 		9B1DD7D7AE978DFD72A33A7C /* Pods-RNContainer_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNContainer_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNContainer_iOS/Pods-RNContainer_iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +89,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		932AC70E20FCAF460076254C /* RN_Another_Test_app */ = {
+			isa = PBXGroup;
+			children = (
+				932AC70F20FCAF460076254C /* another_test_app.jsbundle */,
+			);
+			name = RN_Another_Test_app;
+			path = ../../../modules/RN_Another_Test_app;
+			sourceTree = "<group>";
+		};
+		932AC72920FCB3EC0076254C /* RN_Test_app */ = {
+			isa = PBXGroup;
+			children = (
+				932AC72A20FCB3EC0076254C /* test_app.jsbundle */,
+			);
+			name = RN_Test_app;
+			path = ../../../modules/RN_Test_app;
+			sourceTree = "<group>";
+		};
 		9392440D20FC8D3700D7A184 = {
 			isa = PBXGroup;
 			children = (
@@ -123,7 +141,6 @@
 				9392442720FC8D3800D7A184 /* LaunchScreen.storyboard */,
 				9392442A20FC8D3800D7A184 /* Info.plist */,
 				9392442B20FC8D3800D7A184 /* main.m */,
-				9392445920FCA1AC00D7A184 /* index.ios.jsbundle */,
 				9392442220FC8D3700D7A184 /* RNContainer_iOS.xcdatamodeld */,
 				9392445520FC9E8700D7A184 /* modules */,
 			);
@@ -151,17 +168,10 @@
 		9392445520FC9E8700D7A184 /* modules */ = {
 			isa = PBXGroup;
 			children = (
-				9392445620FC9E8700D7A184 /* RN_Test_app */,
+				932AC72920FCB3EC0076254C /* RN_Test_app */,
+				932AC70E20FCAF460076254C /* RN_Another_Test_app */,
 			);
 			path = modules;
-			sourceTree = "<group>";
-		};
-		9392445620FC9E8700D7A184 /* RN_Test_app */ = {
-			isa = PBXGroup;
-			children = (
-				9392445720FC9E8700D7A184 /* index.ios.jsbundle */,
-			);
-			path = RN_Test_app;
 			sourceTree = "<group>";
 		};
 		B13429C4ACB79476BEF49F36 /* Pods */ = {
@@ -285,10 +295,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9392445820FC9E8700D7A184 /* index.ios.jsbundle in Resources */,
 				9392442920FC8D3800D7A184 /* LaunchScreen.storyboard in Resources */,
+				932AC72B20FCB3EC0076254C /* test_app.jsbundle in Resources */,
+				932AC71020FCAF460076254C /* another_test_app.jsbundle in Resources */,
 				9392442620FC8D3800D7A184 /* Assets.xcassets in Resources */,
-				9392445A20FCA1AC00D7A184 /* index.ios.jsbundle in Resources */,
 				9392442120FC8D3700D7A184 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

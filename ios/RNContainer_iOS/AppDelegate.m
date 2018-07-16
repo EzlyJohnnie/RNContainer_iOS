@@ -20,8 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-//    NSURL *jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.jsbundle?platform=ios"];
-    NSURL *jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios.jsbundle" fallbackResource:nil];
+    NSURL *jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"another_test_app" withExtension:@"jsbundle"];
+//    NSURL *jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"test_app" withExtension:@"jsbundle"];
     RCTRootView *rootView =
     [[RCTRootView alloc] initWithBundleURL : jsCodeLocation
                          moduleName        : @"App"
