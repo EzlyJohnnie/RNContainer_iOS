@@ -7,8 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <React/RCTRootView.h>
-#import <React/RCTBundleURLProvider.h>
+#import "MainViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,18 +19,21 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    NSURL *jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"another_test_app" withExtension:@"jsbundle"];
-//    NSURL *jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"test_app" withExtension:@"jsbundle"];
-    RCTRootView *rootView =
-    [[RCTRootView alloc] initWithBundleURL : jsCodeLocation
-                         moduleName        : @"App"
-                         initialProperties : nil
-                          launchOptions    : nil];
+//    NSURL *jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"another_test_app" withExtension:@"jsbundle"];
+////    NSURL *jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"test_app" withExtension:@"jsbundle"];
+//    RCTRootView *rootView =
+//    [[RCTRootView alloc] initWithBundleURL : jsCodeLocation
+//                         moduleName        : @"App"
+//                         initialProperties : nil
+//                          launchOptions    : nil];
+//
+//
+//    UIViewController *vc = [[UIViewController alloc] init];
+//    vc.view = rootView;
     
-    
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.view = rootView;
-    [self.window setRootViewController:vc];
+    MainViewController *vc = [MainViewController new];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self.window setRootViewController:nav];
     return YES;
 }
 
