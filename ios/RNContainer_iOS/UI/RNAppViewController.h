@@ -10,9 +10,6 @@
 
 @interface RNAppViewController : JCBaseViewController
 
-- (instancetype)initWithTitle:(NSString *)title
-                 jsbundleName:(NSString *)jsbundleName
-                   moduleName:(NSString *)moduleName
-            initialProperties:(NSDictionary *)initialProperties;
+- (instancetype)initWithTitle:(NSString *)title;
 
 @end

@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+extern NSString *const TEST_APP_BUNDLE_NAME;
+extern NSString *const TEST_APP_MODULE_NAME;
+extern NSString *const ANOTHER_TEST_APP_BUNDLE_NAME;
+extern NSString *const ANOTHER_TEST_APP_MODULE_NAME;
+
+
 @interface RNHelper : NSObject
 
 + (UIView *)rctViewWithJsbundleName:(NSString *)jsbundleName

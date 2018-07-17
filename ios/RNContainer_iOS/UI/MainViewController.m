@@ -10,6 +10,7 @@
 #import "RNAppViewController.h"
 #import "RNActionSheetViewController.h"
 #import "MultiRNViewController.h"
+#import "RNHelper.h"
 
 @interface MainViewController ()
 
@@ -28,17 +29,15 @@
 
 #pragma - actions
 - (IBAction)onShowTestAppClicked:(id)sender {
-    RNAppViewController *vc = [[RNAppViewController alloc] initWithTitle:@"RN Test App"
-                                                                    jsbundleName:@"test_app"
-                                                                      moduleName:@"App"
-                                                               initialProperties:nil];
+    RNAppViewController *vc = [[RNAppViewController alloc] initWithTitle:@"RN Test App"];
     [self pushViewController:vc];
 }
 
 - (IBAction)onShowAnotherTestAppClicked:(id)sender {
-    RNActionSheetViewController *vc = [[RNActionSheetViewController alloc] initWithJsbundleName:@"another_test_app"
-                                                                                     moduleName:@"App"
-                                                                              initialProperties:nil];
+    RNActionSheetViewController *vc = [[RNActionSheetViewController alloc]
+                                       initWithJsbundleName:ANOTHER_TEST_APP_BUNDLE_NAME
+                                       moduleName:ANOTHER_TEST_APP_MODULE_NAME
+                                       initialProperties:nil];
     [self showActionSheet:vc];
 }
 

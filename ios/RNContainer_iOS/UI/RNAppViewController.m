@@ -20,18 +20,14 @@
 
 @implementation RNAppViewController
 
-- (instancetype)initWithTitle:(NSString *)title
-                 jsbundleName:(NSString *)jsbundleName
-                   moduleName:(NSString *)moduleName
-            initialProperties:(NSDictionary *)initialProperties
-{
+- (instancetype)initWithTitle:(NSString *)title{
     if(self = [super initWithNoNib]){
         self.title = title;
         [self setupView];
         
-        self.view = [RNHelper rctViewWithJsbundleName:jsbundleName
-                                           moduleName:moduleName
-                                    initialProperties:initialProperties
+        self.view = [RNHelper rctViewWithJsbundleName:TEST_APP_BUNDLE_NAME
+                                           moduleName:TEST_APP_MODULE_NAME
+                                    initialProperties:nil
                                         launchOptions:nil];
         
     }
@@ -45,9 +41,10 @@
 }
 
 - (void)onShowAnotherTestAppClicked{
-    RNActionSheetViewController *vc = [[RNActionSheetViewController alloc] initWithJsbundleName:@"another_test_app"
-                                                                                     moduleName:@"App"
-                                                                              initialProperties:nil];
+    RNActionSheetViewController *vc = [[RNActionSheetViewController alloc]
+                                       initWithJsbundleName:ANOTHER_TEST_APP_BUNDLE_NAME
+                                       moduleName:ANOTHER_TEST_APP_MODULE_NAME
+                                       initialProperties:nil];
     [self showActionSheet:vc];
 }
 

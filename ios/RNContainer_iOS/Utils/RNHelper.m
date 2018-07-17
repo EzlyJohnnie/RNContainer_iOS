@@ -11,6 +11,11 @@
 #import <React/RCTRootView.h>
 #import <React/RCTBundleURLProvider.h>
 
+NSString *const TEST_APP_BUNDLE_NAME = @"test_app";
+NSString *const TEST_APP_MODULE_NAME = @"App";
+NSString *const ANOTHER_TEST_APP_BUNDLE_NAME = @"another_test_app";
+NSString *const ANOTHER_TEST_APP_MODULE_NAME = @"App";
+
 @implementation RNHelper
 
 + (UIView *)rctViewWithJsbundleName:(NSString *)jsbundleName

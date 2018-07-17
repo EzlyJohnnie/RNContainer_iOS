@@ -33,11 +33,17 @@
     self.title = @"Multi RN Apps";
     [self setLeftBarButtonType:LeftBarButtonTypeBack];
     
-    UIView *topRCTView = [RNHelper rctViewWithJsbundleName:@"test_app" moduleName:@"App" initialProperties:nil launchOptions:nil];
+    UIView *topRCTView = [RNHelper rctViewWithJsbundleName:TEST_APP_BUNDLE_NAME
+                                                moduleName:TEST_APP_MODULE_NAME
+                                         initialProperties:nil
+                                             launchOptions:nil];
     [_rnViewTop addSubview:topRCTView];
     [topRCTView fillInSuperView];
     
-    UIView *bottomRCTView = [RNHelper rctViewWithJsbundleName:@"another_test_app" moduleName:@"App" initialProperties:nil launchOptions:nil];
+    UIView *bottomRCTView = [RNHelper rctViewWithJsbundleName:ANOTHER_TEST_APP_BUNDLE_NAME
+                                                   moduleName:ANOTHER_TEST_APP_MODULE_NAME
+                                            initialProperties:nil
+                                                launchOptions:nil];
     [_rnViewBottom addSubview:bottomRCTView];
     [bottomRCTView fillInSuperView];
 }
