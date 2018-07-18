@@ -9,8 +9,7 @@
 
 @implementation UIColor (JCUtils)
 
-+ (UIColor *) colorWithHex:(NSString *)hexString {
-    
++ (UIColor *)jc_colorWithHex:(NSString *)hexString {
     if (!hexString)
         return nil;
     
@@ -41,8 +40,7 @@
                            alpha:1.0f];
 }
 
-- (NSString *)hexStringFromColor
-{
+- (NSString *)jc_hexStringFromColor{
     CGColorSpaceModel colorSpace = CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor));
     const CGFloat *components = CGColorGetComponents(self.CGColor);
     
@@ -66,15 +64,15 @@
     return hex;
 }
 
-- (UIColor *)lighterColor {
-    return [self colorWithScale:1.2];
+- (UIColor *)jc_lighterColor {
+    return [self jc_colorWithScale:1.2];
 }
 
-- (UIColor *)darkerColor {
-    return [self colorWithScale:0.8];
+- (UIColor *)jc_darkerColor {
+    return [self jc_colorWithScale:0.8];
 }
 
-- (UIColor *)colorWithScale:(CGFloat)scale {
+- (UIColor *)jc_colorWithScale:(CGFloat)scale {
     CGFloat h, s, b, a;
     if ([self getHue:&h saturation:&s brightness:&b alpha:&a])
         return [UIColor colorWithHue:h
@@ -84,7 +82,7 @@
     return nil;
 }
 
-+ (UIColor *)getColour:(double)pct between:(NSArray *)colors defaultColor:(UIColor *)defaultColor{
++ (UIColor *)jc_getColour:(double)pct between:(NSArray *)colors defaultColor:(UIColor *)defaultColor{
     NSInteger count = [colors count];
     
     if(count == 1)
@@ -167,7 +165,7 @@
 }
 
 + (UIColor *)appMainColorLight{
-    return [[UIColor appMainColor] lighterColor];
+    return [[UIColor appMainColor] jc_lighterColor];
 }
 
 + (UIColor *)okGrey{
@@ -215,7 +213,7 @@
 }
 
 + (UIColor *)navigationbarTextHighlitColor{
-    return [[UIColor navigationbarTextColor] darkerColor];
+    return [[UIColor navigationbarTextColor] jc_darkerColor];
 }
 
 #pragma mark - toast

@@ -49,7 +49,7 @@
 }
 
 - (void)setupView{
-    _constBottom.constant = -_contentView.height;
+    _constBottom.constant = -_contentView.jc_height;
     super.const_contentViewBottom = _constBottom;
     super.const_contentViewLeft = _const_contentLeft;
     super.const_contentViewRight = _const_contentRight;
@@ -62,7 +62,7 @@
                                               launchOptions:nil];
     
     [_contentView addSubview:rctRootView];
-    [rctRootView fillInSuperView];
+    [rctRootView jc_fillInSuperView];
 }
 
 @end

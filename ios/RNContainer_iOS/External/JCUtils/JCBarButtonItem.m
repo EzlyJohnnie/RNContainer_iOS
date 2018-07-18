@@ -85,15 +85,15 @@ typedef NS_ENUM(NSInteger, BarButtonSide) {
             break;
             
         case LeftBarButtonTypeCancel:
-            [self.button setWidth:kLabelWidth];
-            [self.containerView setWidth:kLabelWidth];
+            [self.button jc_setWidth:kLabelWidth];
+            [self.containerView jc_setWidth:kLabelWidth];
             _text = @"Cancel";
             _icon = [UIImage imageNamed:@"nav_back" inBundle:[JCUtils frameworkBundle] compatibleWithTraitCollection:nil];
             break;
             
         case LeftBarButtonTypeBack:
-            [self.button setWidth:kLeftBackContainerWidth];
-            [self.containerView setWidth:kLeftBackContainerWidth];
+            [self.button jc_setWidth:kLeftBackContainerWidth];
+            [self.containerView jc_setWidth:kLeftBackContainerWidth];
             self.button.imageEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
             [self.button addTarget:self action:@selector(leftBarButtonItemTapped:) forControlEvents:UIControlEventTouchUpInside];
             [self.containerView addSubview:self.button];
@@ -175,7 +175,7 @@ typedef NS_ENUM(NSInteger, BarButtonSide) {
         [self.button.titleLabel sizeToFit];
         [self.button sizeToFit];
         [self.button setBackgroundColor:[UIColor clearColor]];
-        [self.button.titleLabel setFont:[UIFont fontWithSize:15]];
+        [self.button.titleLabel setFont:[UIFont jc_fontWithSize:15]];
         [self.button.titleLabel setTextAlignment:NSTextAlignmentRight];
         [self.button setTitleColor:txtColor ? txtColor : [UIColor whiteColor] forState:UIControlStateNormal];
         [self.button setTitleColor:[UIColor navigationbarTextHighlitColor] forState:UIControlStateHighlighted];

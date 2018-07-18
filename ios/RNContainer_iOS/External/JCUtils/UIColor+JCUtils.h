@@ -10,14 +10,14 @@
 
 @interface UIColor(JCUtils)
 
-+ (UIColor *) colorWithHex:(NSString *) hexString;
-- (NSString *)hexStringFromColor;
++ (UIColor *)jc_colorWithHex:(NSString *) hexString;
+- (NSString *)jc_hexStringFromColor;
 
-- (UIColor *)lighterColor;
-- (UIColor *)darkerColor;
-- (UIColor *)colorWithScale:(CGFloat)scale;
+- (UIColor *)jc_lighterColor;
+- (UIColor *)jc_darkerColor;
+- (UIColor *)jc_colorWithScale:(CGFloat)scale;
 
-+ (UIColor *)getColour:(double)pct between:(NSArray *)colors defaultColor:(UIColor *)defaultColor;
++ (UIColor *)jc_getColour:(double)pct between:(NSArray *)colors defaultColor:(UIColor *)defaultColor;
 
 @end
 

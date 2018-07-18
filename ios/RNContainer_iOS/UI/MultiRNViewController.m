@@ -38,14 +38,14 @@
                                          initialProperties:nil
                                              launchOptions:nil];
     [_rnViewTop addSubview:topRCTView];
-    [topRCTView fillInSuperView];
+    [topRCTView jc_fillInSuperView];
     
     UIView *bottomRCTView = [RNHelper rctViewWithJsbundleName:ANOTHER_TEST_APP_BUNDLE_NAME
                                                    moduleName:ANOTHER_TEST_APP_MODULE_NAME
                                             initialProperties:nil
                                                 launchOptions:nil];
     [_rnViewBottom addSubview:bottomRCTView];
-    [bottomRCTView fillInSuperView];
+    [bottomRCTView jc_fillInSuperView];
 }
 
 

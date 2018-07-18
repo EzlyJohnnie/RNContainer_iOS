@@ -9,15 +9,15 @@
 
 @implementation UIFont (JCUtils)
 
-+ (UIFont *)fontWithType:(JCFontType)type{
-    return [UIFont fontWithType:type size:17]; // default font size
++ (UIFont *)jc_fontWithType:(JCFontType)type{
+    return [UIFont jc_fontWithType:type size:17]; // default font size
 }
 
-+ (UIFont *)fontWithSize:(CGFloat)size{
-    return [UIFont fontWithType:JCFontTypeRegular size:size]; // default font size
++ (UIFont *)jc_fontWithSize:(CGFloat)size{
+    return [UIFont jc_fontWithType:JCFontTypeRegular size:size]; // default font size
 }
 
-+ (UIFont *)fontWithType:(JCFontType)type size:(CGFloat)size{
++ (UIFont *)jc_fontWithType:(JCFontType)type size:(CGFloat)size{
     switch (type){
         case JCFontTypeLight:
             return [UIFont fontWithName:@"Helvetica-Light" size:size];
@@ -34,20 +34,20 @@
     }
 }
 
-- (UIFont *)convertToCustmorFont{
+- (UIFont *)jc_convertToCustmorFont{
     UIFont *customerFont;
     if([self.fontName containsString:@"Bold"]){
-        customerFont = [UIFont fontWithType:JCFontTypeBold size:self.pointSize];
+        customerFont = [UIFont jc_fontWithType:JCFontTypeBold size:self.pointSize];
     }
     else if([self.fontName containsString:@"Light"]){
-        customerFont = [UIFont fontWithType:JCFontTypeLight size:self.pointSize];
+        customerFont = [UIFont jc_fontWithType:JCFontTypeLight size:self.pointSize];
     }
     else if([self.fontName containsString:@"Italic"]){
-        customerFont = [UIFont fontWithType:JCFontTypeItalic size:self.pointSize];
+        customerFont = [UIFont jc_fontWithType:JCFontTypeItalic size:self.pointSize];
     }
     
     if(!customerFont){
-        customerFont = [UIFont fontWithSize:self.pointSize];
+        customerFont = [UIFont jc_fontWithSize:self.pointSize];
     }
     
     return customerFont;

@@ -18,21 +18,21 @@ NSString *const JC_CONST_HEIGHT = @"jc_constHeight";
 
 @implementation UIView (JCUtils)
 
-+ (instancetype)initFromNib {
++ (instancetype)jc_initFromNib {
 	Class class = [self class];
-	return [UIView loadNibNamed:NSStringFromClass(class)
+	return [UIView jc_loadNibNamed:NSStringFromClass(class)
 						ofClass:class];
 }
 
-+ (instancetype)initFromNib:(CGRect)frame {
-	id instance = [self initFromNib];
++ (instancetype)jc_initFromNib:(CGRect)frame {
+	id instance = [self jc_initFromNib];
 	if(self) {
 		[instance setFrame:frame];
 	}
 	return instance;
 }
 
-+ (id)loadNibNamed:(NSString *)nibName ofClass:(Class)objClass {
++ (id)jc_loadNibNamed:(NSString *)nibName ofClass:(Class)objClass {
 	if (nibName && objClass) {
 		NSArray *objects = [[JCUtils frameworkBundle] loadNibNamed:nibName owner:nil options:nil];
 		for (id currentObject in objects){
@@ -45,68 +45,68 @@ NSString *const JC_CONST_HEIGHT = @"jc_constHeight";
 	return nil;
 }
 
-- (void)removeAllSubviews {
+- (void)jc_removeAllSubviews {
 	NSArray *views = [self subviews];
 	for (UIView *v in views) {
 		[v removeFromSuperview];
 	}
 }
 
-- (void)setWidth:(CGFloat)width {
+- (void)jc_setWidth:(CGFloat)width {
     CGRect newFrame = self.frame;
     newFrame.size.width = width;
     [self setFrame:newFrame];
 }
 
-- (void)setHeight:(CGFloat)height {
+- (void)jc_setHeight:(CGFloat)height {
     CGRect newFrame = self.frame;
     newFrame.size.height = height;
     [self setFrame:newFrame];
 }
 
 
-- (CGFloat)x{
+- (CGFloat)jc_x{
     return self.frame.origin.x;
 }
 
-- (CGFloat)y{
+- (CGFloat)jc_y{
     return self.frame.origin.y;
 }
 
-- (CGFloat)width
+- (CGFloat)jc_width
 {
     return self.frame.size.width;
 }
 
-- (CGFloat)height{
+- (CGFloat)jc_height{
     return self.frame.size.height;
 }
 
-- (CGFloat)right{
-    return self.frame.origin.x + [self width];
+- (CGFloat)jc_right{
+    return self.frame.origin.x + [self jc_width];
 }
 
-- (CGFloat)bottom{
+- (CGFloat)jc_bottom{
     return self.frame.origin.y + self.frame.size.height;
 }
 
-- (void)setX:(CGFloat)x{
+- (void)jc_setX:(CGFloat)x{
     CGRect frame = self.frame;
     frame.origin.x = x;
     self.frame = frame;
 }
 
-- (void)setY:(CGFloat)y{
+- (void)jc_setY:(CGFloat)y{
     CGRect frame = self.frame;
     frame.origin.y = y;
     self.frame = frame;
 }
 
-- (void)roundCornerWithRadius:(CGFloat)cornerRadius corners:(UIRectCorner)corners{
-    [self roundCornerWithRadius:cornerRadius corners:corners frame:self.bounds];
+- (void)jc_roundCornerWithRadius:(CGFloat)cornerRadius corners:(UIRectCorner)corners{
+    [self jc_roundCornerWithRadius:cornerRadius corners:corners frame:self.bounds];
 }
 
-- (void)roundCornerWithRadius:(CGFloat)cornerRadius corners:(UIRectCorner)corners frame:(CGRect)frame{
+- (void)jc_roundCornerWithRadius:(CGFloat)cornerRadius corners:(UIRectCorner)corners frame:(CGRect)frame{
     self.clipsToBounds = YES;
     UIBezierPath *btnLatestMaskPath = [UIBezierPath
                                        bezierPathWithRoundedRect:frame
@@ -118,7 +118,7 @@ NSString *const JC_CONST_HEIGHT = @"jc_constHeight";
     self.layer.mask = btnLatestMaskLayer;
 }
 
-- (NSDictionary *)fillInSuperView{
+- (NSDictionary *)jc_fillInSuperView{
     self.translatesAutoresizingMaskIntoConstraints = NO;
     
     NSLayoutConstraint *width = [NSLayoutConstraint
@@ -167,7 +167,7 @@ NSString *const JC_CONST_HEIGHT = @"jc_constHeight";
              };
 }
 
-- (NSLayoutConstraint *)addHeightConstraint:(CGFloat)height{
+- (NSLayoutConstraint *)jc_addHeightConstraint:(CGFloat)height{
     self.translatesAutoresizingMaskIntoConstraints = NO;
     NSLayoutConstraint *heightConstraint =
     [NSLayoutConstraint constraintWithItem:self
@@ -182,7 +182,7 @@ NSString *const JC_CONST_HEIGHT = @"jc_constHeight";
     return heightConstraint;
 }
 
-- (NSLayoutConstraint *)addWidthConstraint:(CGFloat)width{
+- (NSLayoutConstraint *)jc_addWidthConstraint:(CGFloat)width{
     self.translatesAutoresizingMaskIntoConstraints = NO;
     NSLayoutConstraint *widthConstraint =
     [NSLayoutConstraint constraintWithItem:self
@@ -197,7 +197,7 @@ NSString *const JC_CONST_HEIGHT = @"jc_constHeight";
     return widthConstraint;
 }
 
-- (NSLayoutConstraint *)addCenterVerticalConstraintWithOffset:(CGFloat)offset{
+- (NSLayoutConstraint *)jc_addCenterVerticalConstraintWithOffset:(CGFloat)offset{
     NSLayoutConstraint *yCenterConstraint =
     [NSLayoutConstraint constraintWithItem:self
                                  attribute:NSLayoutAttributeCenterY
@@ -211,7 +211,7 @@ NSString *const JC_CONST_HEIGHT = @"jc_constHeight";
     return yCenterConstraint;
 }
 
-- (NSLayoutConstraint *)addCenterHorizontalConstraintWithOffset:(CGFloat)offset{
+- (NSLayoutConstraint *)jc_addCenterHorizontalConstraintWithOffset:(CGFloat)offset{
     NSLayoutConstraint *xCenterConstraint =
     [NSLayoutConstraint constraintWithItem:self
                                 attribute:NSLayoutAttributeCenterX
@@ -225,7 +225,7 @@ NSString *const JC_CONST_HEIGHT = @"jc_constHeight";
     return xCenterConstraint;
 }
 
-- (NSLayoutConstraint *)addTopConstraintToParent:(CGFloat)top{
+- (NSLayoutConstraint *)jc_addTopConstraintToParent:(CGFloat)top{
     self.translatesAutoresizingMaskIntoConstraints = NO;
     NSLayoutConstraint *topConstraint = [NSLayoutConstraint
                                          constraintWithItem:self
@@ -240,7 +240,7 @@ NSString *const JC_CONST_HEIGHT = @"jc_constHeight";
     return topConstraint;
 }
 
-- (NSLayoutConstraint *)addLeftConstraintToParent:(CGFloat)left{
+- (NSLayoutConstraint *)jc_addLeftConstraintToParent:(CGFloat)left{
     self.translatesAutoresizingMaskIntoConstraints = NO;
     NSLayoutConstraint *leading = [NSLayoutConstraint
                                    constraintWithItem:self
@@ -255,7 +255,7 @@ NSString *const JC_CONST_HEIGHT = @"jc_constHeight";
     return leading;
 }
 
-- (NSLayoutConstraint *)addRightConstraintToParent:(CGFloat)right{
+- (NSLayoutConstraint *)jc_addRightConstraintToParent:(CGFloat)right{
     self.translatesAutoresizingMaskIntoConstraints = NO;
     NSLayoutConstraint *trailing = [NSLayoutConstraint
                                     constraintWithItem:self
@@ -270,7 +270,7 @@ NSString *const JC_CONST_HEIGHT = @"jc_constHeight";
     return trailing;
 }
 
-- (NSLayoutConstraint *)addBottomConstraintToParent:(CGFloat)bottom{
+- (NSLayoutConstraint *)jc_addBottomConstraintToParent:(CGFloat)bottom{
     NSLayoutConstraint *bottomConst = [NSLayoutConstraint
                                        constraintWithItem:self
                                        attribute:NSLayoutAttributeBottom
@@ -286,7 +286,7 @@ NSString *const JC_CONST_HEIGHT = @"jc_constHeight";
     return bottomConst;
 }
 
-- (NSDictionary *)alignParentTopFillWidth{
+- (NSDictionary *)jc_alignParentTopFillWidth{
     self.translatesAutoresizingMaskIntoConstraints = NO;
     
     NSLayoutConstraint *trailing = [NSLayoutConstraint
@@ -325,11 +325,11 @@ NSString *const JC_CONST_HEIGHT = @"jc_constHeight";
              };
 }
 
-- (NSDictionary *)alignParentBottomFillWidth{
-    return [self alignParentBottomFillWidthWithPaddingLeft:0 right:0 bottom :0];
+- (NSDictionary *)jc_alignParentBottomFillWidth{
+    return [self jc_alignParentBottomFillWidthWithPaddingLeft:0 right:0 bottom :0];
 }
 
-- (NSDictionary *)alignParentBottomFillWidthWithPaddingLeft:(CGFloat)left right:(CGFloat)right bottom:(CGFloat)bottom{
+- (NSDictionary *)jc_alignParentBottomFillWidthWithPaddingLeft:(CGFloat)left right:(CGFloat)right bottom:(CGFloat)bottom{
     self.translatesAutoresizingMaskIntoConstraints = NO;
     
     NSLayoutConstraint *trailing = [NSLayoutConstraint

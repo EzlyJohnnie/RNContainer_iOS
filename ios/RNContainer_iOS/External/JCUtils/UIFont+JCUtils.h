@@ -18,10 +18,10 @@ typedef NS_ENUM(NSInteger, JCFontType) {
 
 @interface UIFont (JCUtils)
 
-+ (UIFont *)fontWithType:(JCFontType)type;
-+ (UIFont *)fontWithSize:(CGFloat)size;
-+ (UIFont *)fontWithType:(JCFontType)type size:(CGFloat)size;
++ (UIFont *)jc_fontWithType:(JCFontType)type;
++ (UIFont *)jc_fontWithSize:(CGFloat)size;
++ (UIFont *)jc_fontWithType:(JCFontType)type size:(CGFloat)size;
 
-- (UIFont *)convertToCustmorFont;
+- (UIFont *)jc_convertToCustmorFont;
 
 @end

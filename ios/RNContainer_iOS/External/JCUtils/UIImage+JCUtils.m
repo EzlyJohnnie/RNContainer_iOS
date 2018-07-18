@@ -10,23 +10,23 @@
 
 @implementation UIImage (JCUtils)
 
-+ (UIImage *)originalImageNamed:(NSString *)imageName{
++ (UIImage *)jc_originalImageNamed:(NSString *)imageName{
     return [[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
-+ (UIImage *)placeholderImage{
++ (UIImage *)jc_placeholderImage{
     return [UIImage imageNamed:@"image_placeholder"];
 }
 
-- (NSData *)getImageData{
+- (NSData *)jc_getImageData{
     if(self){
         return [[NSData alloc] initWithData:UIImageJPEGRepresentation((self), 1.0)];
     }
     return nil;
 }
 
-- (BOOL)isTransparentAt:(CGPoint)point{
-    UIColor *color = [self colorAtPixel:point];
+- (BOOL)jc_isTransparentAt:(CGPoint)point{
+    UIColor *color = [self jc_colorAtPixel:point];
     CGFloat alphs = CGColorGetAlpha(color.CGColor);
     if (alphs > 0.0){
         return NO;
@@ -36,7 +36,7 @@
     }
 }
 
-- (UIColor *)colorAtPixel:(CGPoint)point{
+- (UIColor *)jc_colorAtPixel:(CGPoint)point{
     // Cancel if point is outside image coordinates
     if (!CGRectContainsPoint(CGRectMake(0.0f, 0.0f, self.size.width, self.size.height), point)) {
         return nil;
@@ -78,7 +78,7 @@
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
-+ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size{
++ (UIImage *)jc_imageWithColor:(UIColor *)color size:(CGSize)size{
     CGRect rect=CGRectMake(0,0, size.width, size.height);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -89,11 +89,11 @@
     return theImage;
 }
 
-- (UIImage *)imageWithScaled:(CGFloat)scale {
-    return [self resizeWithWidth:self.size.width * scale height:self.size.height * scale];
+- (UIImage *)jc_imageWithScaled:(CGFloat)scale {
+    return [self jc_resizeWithWidth:self.size.width * scale height:self.size.height * scale];
 }
 
-- (UIImage *)resizeWithWidth:(CGFloat)width height:(CGFloat)height {
+- (UIImage *)jc_resizeWithWidth:(CGFloat)width height:(CGFloat)height {
     CGRect rect = CGRectMake(0, 0, width, height);
     UIGraphicsBeginImageContext(rect.size);
     [self drawInRect:rect];
@@ -104,7 +104,7 @@
     return [UIImage imageWithData:data];
 }
 
-- (UIImage *)rotateForExif {
+- (UIImage *)jc_rotateForExif {
     int kMaxResolution = INT_MAX; // Or whatever
     CGImageRef imgRef = self.CGImage;
 
@@ -210,7 +210,7 @@
     return [UIImage imageWithData:newImageData];
 }
 
-- (UIImage *)fillWithColor:(UIColor *)fillColor{
+- (UIImage *)jc_fillWithColor:(UIColor *)fillColor{
     BOOL supressOtherWarnings = NO;
 
     CGImageRef imageRef = [self CGImage];

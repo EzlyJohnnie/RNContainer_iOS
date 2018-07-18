@@ -8,6 +8,6 @@
 
 @interface UINavigationBar (JCUtils)
 
-- (void)setBackgroundColor:(UIColor *)backgroundColor extendToStatusBar:(BOOL)extendToStatusBar;
+- (void)jc_setBackgroundColor:(UIColor *)backgroundColor extendToStatusBar:(BOOL)extendToStatusBar;
 
 @end

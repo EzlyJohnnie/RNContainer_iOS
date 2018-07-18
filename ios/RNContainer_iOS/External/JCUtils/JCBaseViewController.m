@@ -70,8 +70,8 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setBackgroundColor:[UIColor navigationbarBackgroundColor] extendToStatusBar:YES];
-    self.navigationController.navigationBar.shadowImage = [UIImage imageWithColor: [UIColor navigationbarBackgroundColor] size:CGSizeMake([JCUtils screenWidth], 1)];
+    [self.navigationController.navigationBar jc_setBackgroundColor:[UIColor navigationbarBackgroundColor] extendToStatusBar:YES];
+    self.navigationController.navigationBar.shadowImage = [UIImage jc_imageWithColor: [UIColor navigationbarBackgroundColor] size:CGSizeMake([JCUtils screenWidth], 1)];
 }
 
 - (void)hideNavigationBar:(BOOL) isHide{
@@ -101,7 +101,7 @@
         _ivBG.contentMode = UIViewContentModeScaleAspectFill;
         _ivBG.image = [UIImage imageNamed:[JCUtils isIPhone] ? @"default_bg_image_iphone" : @"default_bg_image_iphone"];
         [self.view insertSubview:_ivBG atIndex:0];
-        [_ivBG fillInSuperView];
+        [_ivBG jc_fillInSuperView];
     }
 }
 
@@ -154,8 +154,8 @@
 }
 
 - (void)setTabBarImageName:(NSString *)imageName{
-    self.tabBarItem.image = [UIImage originalImageNamed:[NSString stringWithFormat:@"%@", imageName]];
-    self.tabBarItem.selectedImage = [UIImage originalImageNamed:[NSString stringWithFormat:@"%@_sel", imageName]];
+    self.tabBarItem.image = [UIImage jc_originalImageNamed:[NSString stringWithFormat:@"%@", imageName]];
+    self.tabBarItem.selectedImage = [UIImage jc_originalImageNamed:[NSString stringWithFormat:@"%@_sel", imageName]];
     self.tabBarItem.imageInsets = UIEdgeInsetsMake(3, 0, -3, 0);
 }
 
@@ -163,7 +163,7 @@
     if(_statusBarView){
         [_statusBarView removeFromSuperview];
     }
-    _statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, [JCUtils statusBarHeight])];
+    _statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.jc_width, [JCUtils statusBarHeight])];
     [_statusBarView setBackgroundColor:colour];
     [self.view insertSubview:_statusBarView atIndex:999];
 }

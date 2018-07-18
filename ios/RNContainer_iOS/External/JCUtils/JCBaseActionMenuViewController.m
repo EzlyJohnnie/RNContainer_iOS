@@ -137,8 +137,8 @@
     if(!_hasDismissed){
         UIView *draggableView = [self getDraggableView];
         CGPoint offset = [sender translationInView:self.view];
-        float newY = draggableView.y + offset.y;
-        float contentViewOriginalY = self.view.height - draggableView.height;
+        float newY = draggableView.jc_y + offset.y;
+        float contentViewOriginalY = self.view.jc_height - draggableView.jc_height;
         if(newY < contentViewOriginalY){
             newY = contentViewOriginalY;
         }
@@ -150,19 +150,19 @@
                 alpha = 0.5;
             }
             
-            [draggableView setY:newY];
+            [draggableView jc_setY:newY];
             self.view.backgroundColor = [UIColor colorWithRed:0/255 green:0/255 blue:0/255 alpha:alpha];
             
             [sender setTranslation:CGPointMake(0, 0) inView:self.view];
         }
         else if(sender.state == UIGestureRecognizerStateEnded){
-            if(newY > self.view.height - draggableView.height / 2){
+            if(newY > self.view.jc_height - draggableView.jc_height / 2){
                 [self dismiss];
             }
             else{
                 [UIView animateWithDuration:0.3 * dargRatio animations:^{
                     self.view.backgroundColor = [UIColor colorWithRed:0/255 green:0/255 blue:0/255 alpha:0.5];
-                    [draggableView setY:contentViewOriginalY];
+                    [draggableView jc_setY:contentViewOriginalY];
                 }];
             }
         }

@@ -17,48 +17,48 @@ extern NSString *const JC_CONST_HEIGHT;
 
 @interface UIView (JCUtils)
 
-+ (instancetype)initFromNib;
-+ (instancetype)initFromNib:(CGRect)frame;
++ (instancetype)jc_initFromNib;
++ (instancetype)jc_initFromNib:(CGRect)frame;
 
-+ (id)loadNibNamed:(NSString *)nibName ofClass:(Class)objClass;
++ (id)jc_loadNibNamed:(NSString *)nibName ofClass:(Class)objClass;
 
-- (void)removeAllSubviews;
+- (void)jc_removeAllSubviews;
 
-- (void)setWidth:(CGFloat)width;
+- (void)jc_setWidth:(CGFloat)width;
 
-- (void)setHeight:(CGFloat)height;
+- (void)jc_setHeight:(CGFloat)height;
 
-- (CGFloat)x;
+- (CGFloat)jc_x;
 
-- (CGFloat)y;
+- (CGFloat)jc_y;
 
-- (CGFloat)width;
+- (CGFloat)jc_width;
 
-- (CGFloat)height;
+- (CGFloat)jc_height;
 
-- (CGFloat)right;
+- (CGFloat)jc_right;
 
-- (CGFloat)bottom;
+- (CGFloat)jc_bottom;
 
-- (void)setX:(CGFloat)x;
+- (void)jc_setX:(CGFloat)x;
 
-- (void)setY:(CGFloat)y;
+- (void)jc_setY:(CGFloat)y;
 
-- (void)roundCornerWithRadius:(CGFloat)cornerRadius corners:(UIRectCorner)corners;
-- (void)roundCornerWithRadius:(CGFloat)cornerRadius corners:(UIRectCorner)corners frame:(CGRect)frame;
+- (void)jc_roundCornerWithRadius:(CGFloat)cornerRadius corners:(UIRectCorner)corners;
+- (void)jc_roundCornerWithRadius:(CGFloat)cornerRadius corners:(UIRectCorner)corners frame:(CGRect)frame;
 
-- (NSDictionary *)fillInSuperView;
-- (NSLayoutConstraint *)addHeightConstraint:(CGFloat)height;
-- (NSLayoutConstraint *)addWidthConstraint:(CGFloat)width;
-- (NSLayoutConstraint *)addTopConstraintToParent:(CGFloat)top;
-- (NSLayoutConstraint *)addLeftConstraintToParent:(CGFloat)left;
-- (NSLayoutConstraint *)addRightConstraintToParent:(CGFloat)right;
-- (NSLayoutConstraint *)addBottomConstraintToParent:(CGFloat)bottom;
-- (NSLayoutConstraint *)addCenterVerticalConstraintWithOffset:(CGFloat)offset;
-- (NSLayoutConstraint *)addCenterHorizontalConstraintWithOffset:(CGFloat)offset;
+- (NSDictionary *)jc_fillInSuperView;
+- (NSLayoutConstraint *)jc_addHeightConstraint:(CGFloat)height;
+- (NSLayoutConstraint *)jc_addWidthConstraint:(CGFloat)width;
+- (NSLayoutConstraint *)jc_addTopConstraintToParent:(CGFloat)top;
+- (NSLayoutConstraint *)jc_addLeftConstraintToParent:(CGFloat)left;
+- (NSLayoutConstraint *)jc_addRightConstraintToParent:(CGFloat)right;
+- (NSLayoutConstraint *)jc_addBottomConstraintToParent:(CGFloat)bottom;
+- (NSLayoutConstraint *)jc_addCenterVerticalConstraintWithOffset:(CGFloat)offset;
+- (NSLayoutConstraint *)jc_addCenterHorizontalConstraintWithOffset:(CGFloat)offset;
 
-- (NSDictionary *)alignParentTopFillWidth;
-- (NSDictionary *)alignParentBottomFillWidth;
-- (NSDictionary *)alignParentBottomFillWidthWithPaddingLeft:(CGFloat)left right:(CGFloat)right bottom:(CGFloat)bottom;
+- (NSDictionary *)jc_alignParentTopFillWidth;
+- (NSDictionary *)jc_alignParentBottomFillWidth;
+- (NSDictionary *)jc_alignParentBottomFillWidthWithPaddingLeft:(CGFloat)left right:(CGFloat)right bottom:(CGFloat)bottom;
 
 @end
